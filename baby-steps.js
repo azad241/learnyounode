@@ -1,0 +1,1 @@
+console.log(process.argv.slice(2).reduce((p_value, c_value) => p_value+parseInt(c_value), 0));
