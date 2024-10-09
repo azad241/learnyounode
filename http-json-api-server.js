@@ -2,8 +2,9 @@ const http = require('http');
 const url = require('url');
 
 const server = http.createServer((req, res) => {
-    const servedURL = new URL(req.url, `http://localhost:${process.argv[2]}`);
-    
+    const localurl = `http://localhost:${process.argv[2]}`;
+    const servedURL = new URL(req.url, localurl);
+
     const date = new Date(servedURL.searchParams.get('iso'));
     let result;
 

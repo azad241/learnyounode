@@ -1,4 +1,5 @@
 const http = require('http');
+
 function getContent(url) {
     return new Promise((resolve, reject) => {
         let data = '';
@@ -20,10 +21,10 @@ function getContent(url) {
 
 let list = ['', '', ''];
 async function printResults() {
-    const a_v = [2, 3, 4];
-    for (let i=0;i<a_v.length; i++) {
+    const tmp = [2, 3, 4];
+    for (let i = 0; i < tmp.length; i++) {
         try {
-            const data = await getContent(process.argv[a_v[i]]);
+            const data = await getContent(process.argv[tmp[i]]);
             list[i] = data;
         } catch (error) {
             console.log(error);
